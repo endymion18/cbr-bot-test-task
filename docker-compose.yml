@@ -1,0 +1,18 @@
+services:
+  redis:
+    image: redis:7
+    container_name: redis
+    ports:
+      - "6379:6379"
+
+  cbr-downloader:
+    build: .
+    depends_on:
+      - redis
+
+  tg-bot:
+    env_file:
+      - .env-dev
+    build: .
+    depends_on:
+      - redis
