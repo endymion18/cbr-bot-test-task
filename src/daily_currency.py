@@ -9,7 +9,7 @@ client = redis.Redis(host="redis", port=6379)
 
 
 async def get_currencies() -> dict[str, tuple]:
-    async with aiohttp.ClientSession() as session:
+    async with aiohttp.ClientSession(trust_env=True) as session:
         async with session.get("https://cbr.ru/scripts/XML_daily.asp") as response:
             if response.status == 200:
                 currencies_raw = await response.text()

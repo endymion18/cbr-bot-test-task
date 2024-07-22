@@ -9,6 +9,8 @@ from aiogram.enums import ParseMode
 from aiogram.filters import CommandStart
 from aiogram.types import Message
 
+from daily_currency import client
+
 TOKEN = os.getenv("BOT_TOKEN")
 
 dp = Dispatcher()
