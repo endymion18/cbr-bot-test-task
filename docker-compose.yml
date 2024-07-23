@@ -8,6 +8,8 @@ services:
 
   cbr-downloader:
     container_name: cbr-downloader
+    env_file:
+      - .env-dev
     build: .
     command: ["python3", "src/daily_currency.py"]
     depends_on:

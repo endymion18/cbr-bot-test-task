@@ -1,11 +1,15 @@
 import asyncio
+import os
 
 import aiohttp
 import xml.etree.ElementTree as et
 import redis.asyncio as redis
 from apscheduler.schedulers.asyncio import AsyncIOScheduler
 
-client = redis.Redis(host="redis", port=6379)
+REDIS_HOST = os.getenv("REDIS_HOST")
+REDIS_PORT = int(os.getenv("REDIS_PORT"))
+
+client = redis.Redis(host=REDIS_HOST, port=REDIS_PORT)
 
 
 async def get_currencies() -> dict[str, tuple]:
