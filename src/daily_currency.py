@@ -41,4 +41,5 @@ async def main_worker():
         await asyncio.sleep(1000)
 
 
-asyncio.run(main_worker())
+if __name__ == "__main__":
+    asyncio.run(main_worker())

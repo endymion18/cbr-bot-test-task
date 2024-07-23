@@ -8,4 +8,4 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 COPY . .
 
-CMD ["python3", "src/telegram-bot.py"]
+CMD ["python3", "src/telegram_bot.py"]
